@@ -16,7 +16,14 @@ attempts = 0
 
 
 while True:
-    user_guess = int(input("Guess a Number Between 1 - 100 ")) # Taking Inputs From the user
+    user_guess = input("Guess a Number Between 1 - 100 ") # Taking Inputs From the user
+    if user_guess.isdigit():
+        user_guess = int(user_guess)
+        if user_guess <= 0:
+            quit(" Please Enter Number Greater Than 0")
+    else:
+        quit("Plese Enter A number")
+
     if user_guess == comp_guss:
         print("You Won")
         attempts += 1
@@ -28,7 +35,7 @@ while True:
         print("Try again With a Bigger Number")
         attempts += 1
 
-    else:
-        print("Not a number")
+else:
+    print("Not a number")
 
 print(attempts)
